@@ -146,6 +146,7 @@
     <ClCompile Include="ReservaPersonalForm.cpp" />
     <ClCompile Include="TurnoForm.cpp" />
     <ClCompile Include="Usuario.cpp" />
+    <ClCompile Include="UsuariosForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CitasCForm.h">
@@ -191,6 +192,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Usuario.h" />
+    <ClInclude Include="UsuariosForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CitasCForm.resx">
@@ -234,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TurnoForm.resx">
       <DependentUpon>TurnoForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosForm.resx">
+      <DependentUpon>UsuariosForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

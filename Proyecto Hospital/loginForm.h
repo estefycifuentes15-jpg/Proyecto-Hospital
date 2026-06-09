@@ -2,6 +2,7 @@
 #include "menuCirujanoForm.h"
 #include "menuMedicoGForm.h"
 #include "menuPacienteForm.h"
+#include "UsuariosForm.h"
 #include "Usuario.h"
 #include <msclr/marshal_cppstd.h>
 
@@ -240,15 +241,16 @@ namespace ProyectoHospital {
 		std::string enteredEmail = marshal_as<std::string>(this->textBox1->Text);
 		std::string enteredPass = marshal_as<std::string>(this->textBox2->Text);
 
-		Usuario usuarios[3] = {
-			Usuario("Carlos ", "Carlos", "1234", "MedicoG"),
-			Usuario("Jair ", "Jair", "5678", "Cirujano"),
-			Usuario("Pamela ", "Pamela", "9123", "Paciente")
-		};
+			Usuario usuarios[4] = {
+				Usuario("Carlos ", "Carlos", "1234", "MedicoG"),
+				Usuario("Jair ", "Jair", "5678", "Cirujano"),
+				Usuario("Pamela ", "Pamela", "9123", "Paciente"),
+				Usuario("Estefania ", "Estefania", "1234", "Usuarios")
+			};
 
 		// Buscar por email
 		int idx = -1;
-		for (int i = 0; i < 3; i++) {
+			for (int i = 0; i < 4; i++) {
 			if (usuarios[i].getEmail() == enteredEmail) { idx = i; break; }
 		}
 		if (idx == -1) { MessageBox::Show("Usuario incorrecto.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error); return; }
@@ -263,6 +265,7 @@ namespace ProyectoHospital {
 		if (perfil == "MedicoG") { menuMedicoGForm^ f = gcnew menuMedicoGForm(); f->ShowDialog(); }
 		else if (perfil == "Cirujano") { menuCirujanoForm^ f = gcnew menuCirujanoForm(); f->ShowDialog(); }
 		else if (perfil == "Paciente") { menuPacienteForm^ f = gcnew menuPacienteForm(); f->ShowDialog(); }
+			else if (perfil == "Usuarios") { UsuariosForm^ f = gcnew UsuariosForm(); f->ShowDialog(); }
 		this->Show();
 	}
 	};
